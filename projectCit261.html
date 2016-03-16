@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+	<html>
+		<head> 
+			<TITLE>
+			  Card Creation Quiz
+			  </TITLE>
+		</head>
+		<BODY>
+			  <H1>Quiz Creation</H1>
+			  <P>Create a quiz series and add cards to it:</P> 
+		</BODY>
+
+		<input type="text" id="quiz_series">
+		<input type="submit" value="submit" onclick="add_quiz_series()">
+		<br>
+
+		<input type="text" id="quiz_name">
+		<input type="text" id="quiz_front">
+		<input type="text" id="quiz_back">
+		<input type="submit" value="submit" onclick="add_quiz_card()">
+
+		<script>
+		function add_quiz_series() {
+		  
+		  var quiz_series = document.getElementById("quiz_series").value;
+		  document.getElementById("quiz_series").value = "";
+
+		  //list in local storage
+		  
+		  var collections = localStorage.getItem("collections");
+		 
+		  if (collections == null) {
+			var collection_array = [quiz_series];
+		  }
+		  
+		  else {
+		  
+			var collection_array = JSON.parse(collections, true);
+			collection_array.push(quiz_series);
+		  }
+		  
+		  localStorage.setItem("collections", JSON.stringify(collection_array));
+		  localStorage.setItem(quiz_series, "");
+		  alert(localStorage.getItem("collections"));
+
+		 }
+		  
+		 function add_quiz_card() {
+			
+		  var quiz_name = document.getElementById("quiz_name").value;
+		  var quiz_front = document.getElementById("quiz_front").value;
+		  var quiz_back = document.getElementById("quiz_back").value;
+		  
+		  //can add "" to blank them out later
+		  
+		  var quiz = localStorage.getItem(quiz_name);
+		  
+		  if (quiz == "") {
+			var flashcards = [{front: quiz_front, back: quiz_back}];
+		  }
+		  
+		  else {
+			var flashcards = JSON.parse(quiz);
+			flashcards.push([{front: quiz_front, back: quiz_back}]);
+		  }
+		  
+		  localStorage.setItem(quiz_name, JSON.stringify(flashcards));
+		  alert(localStorage.getItem(quiz_name));
+		  }
+		  
+		</script>
+
+	</html>
