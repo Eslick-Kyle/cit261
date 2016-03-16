@@ -1,0 +1,41 @@
+{
+    "ComputerHardwareQuiz":[
+            {
+               "front":"Question",
+               "back":"Answer"
+            },
+
+            {
+               "front":"Question",
+               "back":"Answer"
+            },
+
+            {
+               "front":"Question",
+               "back":"Answer"
+            },
+
+            {
+               "front":"Question",
+               "back":"Answer"
+            }
+         ],
+    "NonComputerHardwareQuiz":[
+            {
+               "front":"Question",
+               "back":"Answer"
+            },
+            {
+               "front":"Question",
+               "back":"Answer"
+            },
+            {
+               "front":"Question",
+               "back":"Answer"
+            },
+            {
+               "front":"Question",
+               "back":"Answer"
+            }
+         ]
+}
