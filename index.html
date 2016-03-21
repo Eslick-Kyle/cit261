@@ -33,7 +33,7 @@
                     <br/> 
                     Select quiz:
                     <br/>
-                    <select id="quiz_name"></select>
+                    <select id="quiz_name" onchange="loadQuiz()" ></select>
                     <br/>
                     <br/> 
                     <br/> 
@@ -47,8 +47,44 @@
                     <div id="test"></div>
                 </div>
 
-                <script>
-                    // create new quiz and add it to collections
+                
+                <br/>
+                <br/>
+            </div>
+        </div>
+
+        <div class="b1">
+            <div class="main">
+                <h1 class="heading">Study</h1>
+                <br/>
+                
+				<div id="cardFront"></div>
+				<div id="cardBack"></div>
+				
+				<!--<button id = "got_it"> Got it </button>-->
+				<button id = "flip"> Flip </button>
+				<button id = "check" onclick = "cardInfo()" > Check </button>
+                <br/>
+                <br/>
+            </div>
+        </div>
+
+    </main>
+
+    <!--<div class="b">
+        <footer>
+            <ul>
+                <li>All content © 2016 Quiz Me</li>
+            </ul>   
+        </footer>
+    </div>-->
+			<script>
+                    // Global variable
+					var currentQuiz;
+					
+					
+					
+					// create new quiz and add it to collections
                     function add_quiz_series() {
                         var quiz_series = document.getElementById("quiz_series").value;
                         document.getElementById("quiz_series").value = "";
@@ -135,30 +171,43 @@
                         loadDoc();
                         buildSelect();
                     }
+					
+					function loadQuiz(){
+						
+						var quizName = document.getElementById("quiz_name").value;
+						var quiz = localStorage.getItem(quizName);
+					
+						localQuiz = JSON.parse(quiz,true);
+						localStorage.setItem("cardNumber", 0);
+						cardInfo();
+					
+					
+					
+					}
+					
+					function cardInfo (){
+						
+							var cardNumber = parseInt(localStorage.getItem("cardNumber"));
+							
+							if (localQuiz == null){
+							return ;
+							}
+					
+						var length = localQuiz.length;
+					
+					
+							if (cardNumber >= length ) {
+							 cardNumber = 0;
+							}
+						
+							//alert(cardNumber);
+						document.getElementById("cardFront").innerHTML = localQuiz[cardNumber].front ;
+						document.getElementById("cardBack").innerHTML = localQuiz[cardNumber].back;
+					
+					localStorage.setItem("cardNumber", (cardNumber + 1) );
+					}
+					
+					
                 </script>
-                <br/>
-                <br/>
-            </div>
-        </div>
-
-        <div class="b1">
-            <div class="main">
-                <h1 class="heading">Study</h1>
-                <br/>
-                <div class="card"></div>
-                <br/>
-                <br/>
-            </div>
-        </div>
-
-    </main>
-
-    <!--<div class="b">
-        <footer>
-            <ul>
-                <li>All content © 2016 Quiz Me</li>
-            </ul>   
-        </footer>
-    </div>-->
-</body>
+	</body>
 </html>
