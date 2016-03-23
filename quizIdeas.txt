@@ -1,0 +1,83 @@
+{
+    "ComputerHardwareQuiz":[
+            {
+               "front":"What type of memory does a computer use?",
+               "back":"RAM Random Access memory"
+            },
+
+            {
+               "front":"How does a CPU work?",
+               "back":"The central processing unit, excecutes instructions and processes calculations"
+            },
+
+            {
+               "front":"What is a GPU?",
+               "back":"Graphic proccessing unit"
+            },
+
+            {
+               "front":"How does a computer communicate",
+               "back":"With 1's and 0's to turn electrical circuits on and off"
+            }
+         ],
+		 "JavaScriptQuiz":[
+            {
+               "front":"What tags do you need in HTML to us JavaScript? ",
+               "back":"<script> </script>"
+            },
+
+            {
+               "front":"How would you declare a variable in JavaScript? ",
+               "back":" var name ;"
+            },
+
+            {
+               "front":"How do you create a function in JavaScript? ",
+               "back":"function name(){ }"
+            },
+
+            {
+               "front":"When creating JavaScript in an HTML document where would you put Script tags?",
+               "back":" In the Head or Body of the HTML"
+            }
+         ],
+		 "LocalStorageQuiz":[
+            {
+               "front":"Question",
+               "back":"Answer"
+            },
+
+            {
+               "front":"Question",
+               "back":"Answer"
+            },
+
+            {
+               "front":"Question",
+               "back":"Answer"
+            },
+
+            {
+               "front":"Question",
+               "back":"Answer"
+            }
+         ],
+    "NonComputerHardwareQuiz":[
+            {
+               "front":"Question",
+               "back":"Answer"
+            },
+            {
+               "front":"Question",
+               "back":"Answer"
+            },
+            {
+               "front":"Question",
+               "back":"Answer"
+            },
+            {
+               "front":"Question",
+               "back":"Answer"
+            }
+         ]
+}
