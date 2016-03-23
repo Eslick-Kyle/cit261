@@ -1,0 +1,45 @@
+body{
+	background-color: #fd536c;
+}
+#logo{
+	font-family: "Trade Gothic Next LT Pro", "Arial", sans-serif;
+	font-weight: bold;
+	color: #FFFFFF;
+	font-size: 60px;
+}
+.welcome{
+	text-align: center;
+	text-transform: uppercase;
+	color:  #ffffff;
+}
+header{
+	text-align: center;
+	margin: auto;
+}
+
+.main{
+	font-family: "Trade Gothic Next LT Pro", "Arial", sans-serif;
+	color: #ffffff;
+	max-width: 80%;
+	padding-top: 3.5%;
+	padding-bottom: 3.5%;
+}
+h3{
+	color: #ffffff;
+}
+footer{
+	font-family: "Trade Gothic Next LT Pro", "Arial", sans-serif;
+	color: #ffffff;
+	font-size: 14px;
+	clear: both;
+	text-align: center;
+	position: relative;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	background-color: #212c32;
+	width: 100%;
+}
+footer ul li{
+	display: inline;
+}
