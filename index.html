@@ -57,9 +57,29 @@
             <div class="main">
                 <h1 class="heading">Study</h1>
                 <br/>
-                
-				<div id="cardFront"></div>
-				<div id="cardBack"></div>
+				
+				
+// create and flip cards
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+  <div class="flipper">
+    <div class="cardFront">
+      <p>card1 question question question question question question question question question question question question question question question question question question question question question <p>
+    </div>
+    <div class="cardBack">
+      <p>QUIZ ME </p>
+    </div>
+  </div>
+</div>
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+  <div class="flipper">
+    <div class="cardFront">
+      <p> card2 answer answer answer answer answer answer answer answer answer answer answer answer answer answer answer answer answer answer answer answer answer answer answer answer answer  <p>
+    </div>
+    <div class="cardBack">
+      <p> QUIZ ME  </p>
+    </div>
+  </div>
+</div>
 				
 				<!--<button id = "got_it"> Got it </button>-->
 				<button id = "flip"> Flip </button>
