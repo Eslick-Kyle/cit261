@@ -1,139 +1,139 @@
+/* yellow background - 1st and 3rd section */
 body{
-	background-color: #fd536c;
-}
-#logo{
-	font-family: "Trade Gothic Next LT Pro", "Arial", sans-serif;
-	font-weight: bold;
-	color: #FFFFFF;
-	font-size: 60px;
-}
-.welcome{
-	text-align: center;
-	text-transform: uppercase;
-	color:  #ffffff;
-}
-header{
-	text-align: center;
-	margin: auto;
+	background-color: #f0eb44;
 }
 
+/* Quiz Me logo styling */
+#logo{
+	font-family: 'Oswald', sans-serif;	
+	font-weight: bold;
+	font-size: 60px;
+}
+
+/* each section's main content styling */
 .main{
-	font-family: "Trade Gothic Next LT Pro", "Arial", sans-serif;
-	color: #ffffff;
+	font-family: 'Oswald', sans-serif;
 	max-width: 80%;
 	padding-top: 3.5%;
 	padding-bottom: 3.5%;
 }
-h3{
-	color: #ffffff;
+
+/* selects all elements and sets margin */
+*{
+	margin: 0 auto;
 }
 
+/* content with dark background - 2nd section */
+.b2{
+	background-color: #212c32;
+	width: 100%;
+	color: #FFFFFF;
+}
+
+/* 1st and 3rd section font color */
+.b1{
+	color: #212c32;
+}
+
+/* */
 .flip-container {
-  -webkit-perspective: 1000;
-  -moz-perspective: 1000;
-  -o-perspective: 1000;
-  perspective: 1000;
+	-webkit-perspective: 1000;
+	-moz-perspective: 1000;
+	-o-perspective: 1000;
+	perspective: 1000;
 
-	border: 2px solid #000000;
-  display: block;
-  float: left;
-  padding: 5px; 5px; 5px; 5px;
+	display: block;
+	float: left;
+	padding: 5px 5px 5px 5px;
 }
 
-	.flip-container:hover .flipper,  
-  .flip-container.hover .flipper {
-		-webkit-transform: rotateY(180deg);
-		-moz-transform: rotateY(180deg);
-    -o-transform: rotateY(180deg);
-		transform: rotateY(180deg);
-	}
+/* */
+.flip-container:hover .flipper,  
+.flip-container.hover .flipper {
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
 
+/* */
 .flip-container, .cardFront, .cardBack {
 	width: 400px;
 	height: 300px;
 }
 
+/* */
 .flipper {
-	-webkit-transition: 0.2s;
-	-webkit-transform-style: preserve-3d;
-
-	-moz-transition: 0.2s;
-	-moz-transform-style: preserve-3d;
-  
-  -o-transition: 0.2s;
-	-o-transform-style: preserve-3d;
-
-	transition: 0.2s;
-	transform-style: preserve-3d;
-
 	position: relative;
+
+	-webkit-transition: 0.5s;
+	-webkit-transform-style: preserve-4d;
+	-moz-transition: 0.5s;
+	-moz-transform-style: preserve-4d;
+	-o-transition: 0.5s;
+	-o-transform-style: preserve-4d;
+	transition: 0.5s;
+	transform-style: preserve-4d;
 }
 
+/* */
 .cardBack {
-	-webkit-backface-visibility: hidden;
-	-moz-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-	backface-visibility: hidden;
-
 	position: absolute;
 	top: 0;
 	left: 0;
-}
 
-.cardFront {
-	background-color: #a5a4a4;
-  webkit-backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
 
+/* */
+.cardFront {
+	background-color: #212c32;
+
+	webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+/* */
 .cardBack {
+	background-color: #212c32;
+
 	-webkit-transform: rotateY(180deg);
 	-moz-transform: rotateY(180deg);
-  -o-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
 	transform: rotateY(180deg);
 }
 
+/* */
 .cardFront p  {
 	position: absolute;
-    width: 100%;
-    text-align: center;
-    font-size: 25px;
-  
-  webkit-backface-visibility: hidden;
+	width: 100%;
+	text-align: center;
+	color: #FFFFFF;
+	font-family: 'Oswald', sans-serif;
+
+	webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
 
+/* */
 .cardBack p  {
 	position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    text-align: center;
-    font-size: 25px;
-  
-  webkit-backface-visibility: hidden;
-	-moz-backface-visibility: hidden;
-  -o-backface-visibility: hidden;
-	backface-visibility: hidden;
-}
-
-footer{
-	font-family: "Trade Gothic Next LT Pro", "Arial", sans-serif;
-	color: #ffffff;
-	font-size: 14px;
-	clear: both;
-	text-align: center;
-	position: relative;
-	width: 100%;
-	bottom: 0;
 	left: 0;
-	background-color: #212c32;
+	top: 0;
 	width: 100%;
-}
-footer ul li{
-	display: inline;
+	text-align: center;
+	color: #FFFFFF;
+	font-family: 'Oswald', sans-serif;
+
+	webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	backface-visibility: hidden;
 }
