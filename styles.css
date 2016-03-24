@@ -27,6 +27,100 @@ header{
 h3{
 	color: #ffffff;
 }
+
+.flip-container {
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -o-perspective: 1000;
+  perspective: 1000;
+
+	border: 2px solid #000000;
+  display: block;
+  float: left;
+  padding: 5px; 5px; 5px; 5px;
+}
+
+	.flip-container:hover .flipper,  
+  .flip-container.hover .flipper {
+		-webkit-transform: rotateY(180deg);
+		-moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+		transform: rotateY(180deg);
+	}
+
+.flip-container, .cardFront, .cardBack {
+	width: 400px;
+	height: 300px;
+}
+
+.flipper {
+	-webkit-transition: 0.2s;
+	-webkit-transform-style: preserve-3d;
+
+	-moz-transition: 0.2s;
+	-moz-transform-style: preserve-3d;
+  
+  -o-transition: 0.2s;
+	-o-transform-style: preserve-3d;
+
+	transition: 0.2s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+.cardBack {
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.cardFront {
+	background-color: #a5a4a4;
+  webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.cardBack {
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+
+.cardFront p  {
+	position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+  
+  webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.cardBack p  {
+	position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+  
+  webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
 footer{
 	font-family: "Trade Gothic Next LT Pro", "Arial", sans-serif;
 	color: #ffffff;
