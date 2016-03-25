@@ -4,13 +4,13 @@ HTML STARTS HERE
     <div class="front face" id="quiz_front">
       (QUESTION) should appear hear
     </div>
-    <div class="back face center" id="quiz_back">
-      (ANSWER) should appear hear
+    <div class="back face center" id="blank_side_of_card">
+      QUIZ ME could we make the card number and/or quiz name appear here?
     </div>
   </div>
-  <div id="card2" class="shadow">
-    <div class="front face" id="quiz_front">
-      Click flip to see answer
+  <div id="card2">
+    <div class="front face" id="blank_side_of_card">
+      QUIZ ME could we make the card number and/or quiz name appear here?
     </div>
     <div class="back face center" id="quiz_back">
       card 2 (ANSWER) could appear hear
@@ -18,6 +18,10 @@ HTML STARTS HERE
   </div>
 </div>
 <button class="btn btn-primary" id="flip_content">Flip</button>
+
+
+
+
 CSS STARTS HERE
 #card_container {
   position: relative;
@@ -30,8 +34,16 @@ CSS STARTS HERE
 
 #card_container {
   perspective: 1000;
-  transform-style: preserve-3d;
   transition: all 1.0s linear;
+  transform-style: preserve-3d;
+  -webkit-transition: all 1.0s linear;
+  -webkit-transform-style: preserve-3d;
+  -moz-transition: all 1.0s linear;
+  -moz-transform-style: preserve-3d;
+  -o-transition: all 1.0s linear;
+  -o-transform-style: preserve-3d;
+  transition: all 1.0s linear;
+  transform-style: preserve-3d;
 }
 
 #card1 {
@@ -54,9 +66,12 @@ CSS STARTS HERE
   width: 100%;
   text-align: center;
   color: #ffffff;
-  backface-visibility: hidden;
   background-color: #212c32;
   padding: 15px;
+  webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .face.back {
@@ -71,6 +86,10 @@ CSS STARTS HERE
   height: 100%;
   box-shadow: -15px 15px 15px #aaa;
 }
+
+
+
+
 JAVASCRIPT STARTS HERE
 var btn = document.getElementById('flip_content');
 var content = document.getElementById('card_container');
