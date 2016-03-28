@@ -1,0 +1,157 @@
+                    // Global variable
+					var currentQuiz;
+					
+					// create new quiz and add it to collections
+                    function add_quiz_series() {
+                        var quiz_series = document.getElementById("quiz_series").value;
+                        if (quiz_series == "")
+                            return;
+                        document.getElementById("quiz_series").value = "";
+                        //list in local storage
+                      
+                        var collections = localStorage.getItem("collections");
+                        if (collections == null) {
+                            var collection_array = [quiz_series];
+                        } else {
+                            var collection_array = JSON.parse(collections, true);
+                            collection_array.push(quiz_series);
+                        }
+                        addItem("quiz_name", quiz_series);
+                        localStorage.setItem("collections", JSON.stringify(collection_array));
+                        localStorage.setItem(quiz_series, "");
+                    }
+                    //adds a quiz card to a quiz
+                    function add_quiz_card() {
+                        var quiz_name = document.getElementById("quiz_name").value;
+                        var quiz_front = document.getElementById("quiz_front").value;
+                        var quiz_back = document.getElementById("quiz_back").value;
+
+                        if (quiz_front == "" && quiz_back == "")
+                            return;
+                      
+                        //can add "" to blank them out later
+                        var quiz_front = document.getElementById("quiz_front").value = "";
+                        var quiz_back = document.getElementById("quiz_back").value = "";
+                      
+                        var quiz = localStorage.getItem(quiz_name);
+                      
+                        if (quiz == "") {
+                            var flashcards = [{front: quiz_front, back: quiz_back}];
+                        } else {
+                            var flashcards = JSON.parse(quiz);
+                            flashcards.push({front: quiz_front, back: quiz_back});
+                        }
+                        localStorage.setItem(quiz_name, JSON.stringify(flashcards));
+                    }
+                      //adds an item to a select drop down
+                      //pass it the id of the select box and the item to add
+                    function addItem(select, add) {
+                        var list = document.getElementById(select);
+                        var option = document.createElement("option");
+                        option.text = add;
+                        option.value = add;
+                        var i = 0;
+                        for (; i < list.options.length; i++) {
+                            var x = list.options[i].text;
+                            if (x.toLowerCase() > add.toLowerCase()) {
+                                list.add(option, i);
+                                return;
+                            }
+                        }
+                        list.add(option, i);
+                    }
+                    //grabs quiz.txt and adds the items to the drop down box
+                    function loadDoc() {
+                        var xhttp = new XMLHttpRequest();
+                        xhttp.onreadystatechange = function() {
+                            if (xhttp.readyState == 4 && xhttp.status == 200) {
+                                res  = xhttp.responseText;
+                                res = JSON.parse(res, true);
+                                for (var key in res) {
+                                    addItem("quiz_name", key);
+                                }
+                            }
+                        };
+                        xhttp.open("GET", "quiz.txt", true);
+                        xhttp.send();
+                    }
+                    
+                    //This function grabs all the quizes in local storage and adds them to the 
+                    //drop down box
+                    function buildSelect() {
+                      var collections = localStorage.getItem("collections");
+                        if (collections == null) {
+                        } else {
+                            var collection_array = JSON.parse(collections, true);
+                        }
+                        for (var i = 0; i < collections.length; i++){
+                            addItem("quiz_name", collection_array[i]);
+                        }
+                    }
+                    // runs these functions on page load
+                    window.onload = function() {
+                        loadDoc();
+                        buildSelect();
+                    }
+					
+					function loadQuiz(){
+						
+						var quizName = document.getElementById("quiz_name").value;
+						var quiz = localStorage.getItem(quizName);
+					
+						var tempQuiz = JSON.parse(quiz,true);
+                        currentQuiz = [];
+                        //this code runs through tempQuiz and randomly
+                        //adds items to curretQuiz so the quiz will have a
+                        // random arangment of cards
+                        for (var i = 0; i < tempQuiz.length; i++){
+                            var math = Math.random();
+                            math = math * 100;
+                            math = parseInt(math);
+                            if (math % 2 == 1){
+                                currentQuiz.push(tempQuiz[i]);
+                            } else {
+                                currentQuiz.unshift(tempQuiz[i]);
+                            }
+                        }
+						localStorage.setItem("cardNumber", 0);
+						cardInfo();
+					}
+					
+                    //deleteItem is only needed if you want to delete the current item
+					function cardInfo (deleteItem){
+                        // get current card number
+							var cardNumber = parseInt(localStorage.getItem("cardNumber"));
+							
+                            // if there is no quiz return
+							if (currentQuiz == null){
+							return ;
+							}
+					
+						var length = currentQuiz.length;
+					
+                    // rolls over to the begining of the quiz if you are at the end
+							if (cardNumber >= length ) {
+							cardNumber = 0;
+							}
+
+					// sets the card front and back
+						document.getElementById("cardFront").innerHTML = "<p>" + currentQuiz[cardNumber].front + "</p>";
+						document.getElementById("cardBack").innerHTML = "<p>" + currentQuiz[cardNumber].back + "</p>";
+
+
+					   if (deleteItem) {
+                        //removes the last viewed card from the quiz
+                            currentQuiz.splice(cardNumber-1, 1);
+
+                            // if currentQuiz is == to 0 then there are no more questions and
+                            // it is the end of the quiz
+                            if (currentQuiz.length == 0){
+                                document.getElementById("cardFront").innerHTML = "<p>End of Quiz!</p>";
+                                document.getElementById("cardBack").innerHTML = "<p>End of Quiz!</p>";
+                            }
+                       }
+                       //get the next card ready
+					   localStorage.setItem("cardNumber", (cardNumber + 1) );
+					}
+					
