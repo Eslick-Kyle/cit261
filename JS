@@ -29,9 +29,8 @@ function add_quiz_card() {
     if (quiz_front == "" && quiz_back == "")
         return;
   
-    //can add "" to blank them out later
-    var quiz_front = document.getElementById("quiz_front").value = "";
-    var quiz_back = document.getElementById("quiz_back").value = "";
+    document.getElementById("quiz_front").value = "";
+    document.getElementById("quiz_back").value = "";
   
     var quiz = localStorage.getItem(quiz_name);
   
