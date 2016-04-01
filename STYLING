@@ -1,0 +1,212 @@
+/* yellow background - 1st and 3rd section */
+body{
+	background-color: #fcdf4f;
+	text-align: center;
+	width: 100%;
+}
+
+/* Quiz Me logo styling */
+#logo{
+	font-family: 'Oswald', sans-serif;	
+  font-size: 280px;
+	animation-duration: 1s;
+  animation-name: slidein;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%; 
+  }
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+#study{
+  font-size: 160px;
+}
+
+#create{
+  font-size: 160px;
+} 
+
+p{
+  font-size: 70px;
+}
+/* each section's main content styling */
+.main{
+	font-family: 'Oswald', sans-serif;
+	padding-top: 3.5%;
+	padding-bottom: 3.5%;
+}
+
+/* selects all elements and sets margin */
+*{
+	margin: 0 auto;
+}
+
+/* content with dark background - 2nd section */
+.b2{
+	background-color: #212c32;
+	width: 100%;
+	color: #FFFFFF;
+}
+
+/* 1st and 3rd section font color */
+.b1{
+	color: #212c32;
+}
+
+#card_container {
+  position: relative;
+  margin: 0 auto;
+  width: 300px;
+  height: 200px;
+  z-index: 1;
+  position: relative;
+}
+
+#card_container {
+  perspective: 1000;
+  -webkit-perspective:1000;
+  transition: all 0.5s linear;
+  transform-style: preserve-3d;
+  -webkit-transition: all 0.5s linear;
+  -webkit-transform-style: preserve-3d;
+  -moz-transition: all 0.5s linear;
+  -moz-transform-style: all 1.0s linear;
+  -o-transition: all 0.5s linear;
+  -o-transform-style: preserve-3d;
+  transition: all 0.5s linear;
+  transform-style: preserve-3d;
+}
+
+#card1 {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+}
+
+#card2 {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+}
+
+.flip {
+  transform: rotateY(180deg);
+  	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+}
+
+.face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  background-color: #212c32;
+  padding: 15px;
+  -webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+  -moz-backface-visibility: hidden; /* Firefox ??? works but slowly ???*/
+  backface-visibility:hidden;
+}
+
+.face.back {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  padding: 15px;
+  color: #212c32;
+  text-align: center;
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+}
+
+/* 2nd section button*/
+#moveon{
+	border: 0;
+	background: #dadada;
+	border-radius: 4px;
+	box-shadow: 0 5px 0 #4e4f4f;
+	color: #4e4f4f;
+	cursor: pointer;
+	font: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 15px 38px;
+  font-size: 30px;
+	transition: all .1s linear;
+}
+button {
+	border: 0;
+	background: #dadada;
+	border-radius: 4px;
+	box-shadow: 0 5px 0 #4e4f4f;
+	color: #4e4f4f;
+	cursor: pointer;
+	margin-right: 20px;
+	outline: 0;
+	padding: 20px 50px;
+	transition: all .1s linear;
+  font-family: 'Oswald', sans-serif;;
+  font-size: 40px;
+}
+
+button:active {
+  box-shadow: 0 2px 0 #4e4f4f;
+  transform: translateY(3px);
+}
+
+a {
+	border: 0;
+	background: #dadada;
+	border-radius: 4px;
+	box-shadow: 0 5px 0 #4e4f4f;
+	color: #4e4f4f;
+	cursor: pointer;
+	margin-right: 20px;
+	outline: 0;
+	padding: 20px 50px;
+  font-size: 40px;
+	transition: all .1s linear;
+}
+
+a:active {
+  box-shadow: 0 2px 0 #4e4f4f;
+  transform: translateY(3px);
+}
+/* Following makes responsive to screen size /*
+/* Mobile/Handheld Devices */
+@media only screen and (max-width:480px){
+  img {
+    width:80%;
+  }
+  body {
+    width:320px;
+  }
+}
+/* Tablet Devices */
+@media only screen and (min-width:481px)and (max-width:768px){
+  img {
+    width:50%;
+  }
+  body {
+    width:450px;
+  }
+  header {
+    height: 300px; 
+  }
+}
+
+textarea {
+  outline: none;
+}
+
+select {
+  font-size: 32px;
+}
