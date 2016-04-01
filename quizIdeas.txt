@@ -41,43 +41,43 @@
                "back":" In the Head or Body of the HTML"
             }
          ],
-		 "LocalStorageQuiz":[
+		 "GeographyQuiz":[
             {
-               "front":"Question",
-               "back":"Answer"
+               "front":"Which continent has the highest mountains?",
+               "back":"Asia, with the Himalayan mountains."
             },
 
             {
-               "front":"Question",
-               "back":"Answer"
+               "front":"What is the worlds longest river?",
+               "back":"The Nile, being 4,258 miles long"
             },
 
             {
-               "front":"Question",
-               "back":"Answer"
+               "front":"Which country has the most islands?",
+               "back":"Canada with more than 300,000 islands."
             },
 
             {
-               "front":"Question",
-               "back":"Answer"
+               "front":"What language is spoken by the most people?",
+               "back":"Mandarin Chinese, it is spoken by about 1 billion people."
             }
          ],
-    "NonComputerHardwareQuiz":[
+    "MathQuiz":[
             {
-               "front":"Question",
-               "back":"Answer"
+               "front":"How many edges does a cube have?",
+               "back":"12"
             },
             {
-               "front":"Question",
-               "back":"Answer"
+               "front":"How many movements does it take to cut a pie into 8 pieces?",
+               "back":"3"
             },
             {
-               "front":"Question",
-               "back":"Answer"
+               "front":"The internal angles of triangles always add up to what?",
+               "back":"180 degrees"
             },
             {
-               "front":"Question",
-               "back":"Answer"
+               "front":"What is the smallest prime number?",
+               "back":"2"
             }
          ]
 }
