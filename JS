@@ -76,16 +76,12 @@ function loadDoc() {
             for (var key in res) {
                 var collections = localStorage.getItem("collections");
                 if (collections == null) {
-                    alert(key);
                     var collection_array = [key];
                     addItem("quiz_name", key);
                 } else {
                     var collection_array = JSON.parse(collections, true);
-                    alert(collection_array);
                     if (collection_array.indexOf(key) > -1){
-                        alert("found");
                     } else {
-                        alert("YO");
                         collection_array.push(key);
                         addItem("quiz_name", key);
                     }
